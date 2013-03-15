@@ -74,7 +74,7 @@ body{
     margin: 0 auto;
     background: #fff;
     background: rgba(255, 255, 255, 0.9);
-    margin-top: 100px; 
+    margin-top: 50px; 
     border: 1px solid #ccc;
     position: relative;
     border-top-left-radius: 2px;
@@ -93,9 +93,15 @@ body{
 .title{
     text-align: center;
     font-family: 'Damion', cursive; 
-    text-shadow: 1px 1px 0 rgba(94, 92, 92, 0.4);
-    font-size: 30px;
+    text-shadow: 1px 4px 0px rgba(94, 92, 92, 0.4);
+    font-size: 93px;
     margin-top: 15px;
+}
+.header-top{
+    height: 16px;
+    background: rgba(102, 80, 80, 0.63);
+    -webkit-box-shadow: 0 0 1px 2px #bebebe;
+    border-bottom: 1px solid rgb(133, 120, 120);
 }
 
 

@@ -14,10 +14,27 @@ and open the template in the editor.
     </head>
     <body>
         <div class="title">todos</div>
+        
         <div class="container">
-            <div class="header"></div>
-            <div class="content"></div>
+            
+            <div class="header">
+                <div class="header-top"></div>
+                <div class="header-content" id="create-todo">
+                    <input id="new-todo" placeholder="What needs to be done?" type="text" />
+<!--                    <span class="ui-tooltip-top">Press Enter to save this task</span>-->
+                </div>
+            </div>
+            
+            <div class="content" id="todoapp">
+                <ul class="todo-list" id="todo-list">
+                    <li class="view"></li>
+                    <li class="view"></li>
+                </ul>
+<!--                <div id="todo-stats"></div>-->
+            </div>
+            
             <div class="footer"></div>
+            
         </div>
 
         <script src="lib/jquery-1.9.1.js"></script>
