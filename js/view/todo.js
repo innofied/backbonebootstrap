@@ -8,7 +8,7 @@ define(['jquery','underscore','backbone'],
         var TodoView = Backbone.View.extend({
             el: $('body'), // el attaches to existing element
     
-    /*
+            /*
      *Attach the event when any key will be pressed within the textbox.
      */
             events: {
@@ -20,7 +20,7 @@ define(['jquery','underscore','backbone'],
                 this.render();
             },
     
-    /*
+            /*
      * Function to create the html file dynamically
      */
             render: function(){
@@ -36,17 +36,17 @@ define(['jquery','underscore','backbone'],
                 
             },
             
+            
             /*
              * This function will be called each time when any key will be pressed within the textbox.
              * It'll add a list time when enter will be pressed. 
              */
     
             addItem: function(e){
-                console.log("add",e);
                 var code = e.keyCode;
                 if(code == 13){
-                    console.log("append");
                     $('#todo-list', this.el).append("<li class='view'>"+$('#new-todo').val()+"</li>")
+                    this.collection.create($('#new-todo').val(""));
                     $('#new-todo').val("");
                 }
                 

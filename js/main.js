@@ -12,9 +12,11 @@ requirejs.config({
     //the paths config could be for a directory.
     paths: {
         jquery: '../lib/jquery-1.9.1',
-        localstorage: '../lib/jquery.storage.js/jquery.storage',
+        localstorage: '../lib/localstorage',
         underscore : '../lib/underscore',
-        backbone : '../lib/backbone'
+        backbone : '../lib/backbone',
+        todo : 'view/todo',
+        todomodel: 'model/todo'
     },
     shim : {
         jquery : {
@@ -28,6 +30,18 @@ requirejs.config({
         underscore : {
             deps : ['jquery'],
             exports : '_'
+        },
+         localstorage : {
+            deps : ['underscore','backbone'],
+            exports : 'localstorage'
+        },
+        todo : {
+            deps : ['jquery','underscore','backbone'],
+            exports : 'todo'
+        },
+         todomodel : {
+            deps : ['jquery','underscore','backbone'],
+            exports : 'todomodel'
         }
     }
 });
