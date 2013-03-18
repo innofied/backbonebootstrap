@@ -57,6 +57,20 @@ body{
     background-image: url("../img/bg.png");
     background-position: 100% 100%;
 }
+button{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family: inherit;
+    color: inherit;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
 
 /***********************************End of Base rule*********************************/
 
@@ -81,6 +95,17 @@ body{
     border-top-right-radius: 2px;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.15); 
     font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+}
+.header{
+    border-bottom: 1px solid rgb(214, 203, 203);
+}
+.content{}
+.footer{
+    height: 40px;
+    border-top: 1px solid rgb(214, 203, 203);
+    position: fixed;
+    bottom: 0px;
 }
 
 /****************************End of Layout rule**************************************/
@@ -97,12 +122,118 @@ body{
     font-size: 93px;
     margin-top: 15px;
 }
-.header-top{
+.header .header-top{
     height: 16px;
     background: rgba(102, 80, 80, 0.63);
-    -webkit-box-shadow: 0 0 1px 2px #bebebe;
+    -webkit-box-shadow: 0px 1px 3px 2px rgba(163, 148, 148, 0.74);
+    box-shadow: 0px 1px 3px 2px rgba(163, 148, 148, 0.74);
+    -moz-box-shadow: 0px 1px 3px 2px rgba(163, 148, 148, 0.74);
     border-bottom: 1px solid rgb(133, 120, 120);
 }
+.header .header-content{}
+.header .header-content .header-left-part{
+    width: 50px;
+    height: 69px;
+    border-right: 1px solid rgb(166, 206, 238);
+    float: left;
+}
+.header .header-content .header-left-part i{
+    margin-left: 15px;
+    margin-top: 22px;
+    color: #bebebe;
+}
+.header .header-content .header-left-part i:hover{
+    color: #aeaeae;
+    text-decoration: none;
+}
+.header .header-content input{
+    width: 460px;
+    border: none;
+    border-radius: 0px;
+    height: 45px;
+    margin: 15px 0 0 10px;
+    box-shadow: none;
+    font-size: 26px;
+}
+.content .todo-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.content .content-left-part{
+    width: 50px;
+    height: 315px;
+    border-right: 1px solid rgb(166, 206, 238);
+    float: left;
+}
+.content .todo-list li{
+    position: relative;
+    border-bottom: 1px dotted rgb(214, 203, 203);
+}
+.content .todo-list li .toggle{
+    text-align: center;
+    width: 40px;
+    height: auto;
+    position: absolute;
+    top: 7px;
+    bottom: 0;
+    margin: auto 0;
+    border: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    left: 4px;
+}
+.content .todo-list li .toggle:after{
+    content: '✓';
+    line-height: 43px;
+    font-size: 20px;
+    color: #d9d9d9;
+    text-shadow: 0 -1px 0 #bfbfbf;
+}
+.content .todo-list li label{
+    word-break: break-word;
+    padding: 15px;
+    margin-left: 45px;
+    display: block;
+    line-height: 1.2;
+    -webkit-transition: color 0.4s;
+    -moz-transition: color 0.4s;
+    -ms-transition: color 0.4s;
+    -o-transition: color 0.4s;
+    transition: color 0.4s;
+    font-size: 24px;
+    color: rgb(131, 131, 131);
+}
+.content .todo-list li .destroy{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    margin: auto 0;
+    font-size: 20px;
+    color: red;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+.content .todo-list li .destroy:after{
+    content: '✘';
+}
+.content .todo-list li .destroy:hover{
+    font-size: 24px;
+    text-shadow: 1px 3px 0px rgba(255, 15, 27, 0.4);
+}
+.content .todo-list li .edit{
+    display: none;
+}
+
+
 
 
 /****************************End of Module rule**************************************/
