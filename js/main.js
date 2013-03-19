@@ -12,9 +12,12 @@ requirejs.config({
     //the paths config could be for a directory.
     paths: {
         jquery: '../lib/jquery-1.9.1',
-        localstorage: '../lib/jquery.storage.js/jquery.storage',
+        localstorage: '../lib/localstorage',
         underscore : '../lib/underscore',
-        backbone : '../lib/backbone'
+        backbone : '../lib/backbone',
+        app : 'view/app',
+        todomodel: 'model/todo',
+        todocollection : 'collection/todo'
     },
     shim : {
         jquery : {
@@ -28,12 +31,28 @@ requirejs.config({
         underscore : {
             deps : ['jquery'],
             exports : '_'
+        },
+         localstorage : {
+            deps : ['underscore','backbone'],
+            exports : 'localstorage'
+        },
+        app : {
+            deps : ['jquery','underscore','backbone'],
+            exports : 'app'
+        },
+         todomodel : {
+            deps : ['jquery','underscore','backbone'],
+            exports : 'todomodel'
+        },
+         todocollection : {
+            deps : ['underscore', 'backbone','todomodel','localstorage'],
+            exports : 'todocollection'
         }
     }
 });
 
 // Start the main app logic.
-require(["todo"], function(todo) {
-    var listView = new todo()
+require(["app"], function(app) {
+    var listView = new app()
 });
 
