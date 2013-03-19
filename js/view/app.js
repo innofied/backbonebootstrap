@@ -2,8 +2,8 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-define(['jquery','underscore','backbone','todocollection','todomodel'], 
-    function($, _, Backbone,todocollection,todomodel){
+define(['jquery','underscore','backbone','todocollection','todomodel','todoview'], 
+    function($, _, Backbone,todocollection,todomodel,todoview){
         console.log('back bone =',Backbone);
         var AppView = Backbone.View.extend({
             el: $('body'), // el attaches to existing element
@@ -36,7 +36,7 @@ define(['jquery','underscore','backbone','todocollection','todomodel'],
                 $('.header-content',this.el).append('<input id="new-todo" placeholder="What needs to be done?" type="text" />');
                 $('.container',this.el).append('<div class="content" id="todoapp">');
                 $('.content',this.el).append('<div class="content-left-part"></div>');
-                $('.content-left-part',this.el).append('<ul class="todo-list" id="todo-list">');
+                $('.content',this.el).append('<ul class="todo-list" id="todo-list">');
                 $('.container',this.el).append('<div class="footer"');
                 
             },
@@ -62,7 +62,10 @@ define(['jquery','underscore','backbone','todocollection','todomodel'],
             },
             
             appendItem: function(item){
-                $('#todo-list', this.el).append("<li><div class='view'><input class='toggle' type='checkbox'><label>"+item.get('content')+"</label><button class='destroy'></button></div></li>");
+                var view = new todoview({model: item});
+                console.log(view);
+                view.append(item);
+                //$('#todo-list', this.el).append("<li><div class='view'></div><input class='toggle' type='checkbox'><label>"+item.get('content')+"</label><button class='destroy'></button></li>");
             }
         });
         
