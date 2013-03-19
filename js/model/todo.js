@@ -14,8 +14,14 @@ define(['underscore', 'backbone'], function(_, Backbone) {
             if (!this.get("content")) {
                 this.set({
                     "content": this.defaults.content
-                    });
+                });
             }
+        },
+        
+        toggle: function() {
+            this.save({
+                done: !this.get("done")
+                });
         }
 
     });
