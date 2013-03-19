@@ -35,7 +35,10 @@ and open the template in the editor.
             <div class="content" id="todoapp">
                 <div class="content-left-part"></div>
                 <ul class="todo-list" id="todo-list">
-                    <li>
+                    <li class="completed">  
+                        
+<!--                        add the completed class when the todo item is selected or done-->
+                       
                         <div class="view">
                             <input class="toggle" type="checkbox">
                             <label>item 1</label>
@@ -55,7 +58,11 @@ and open the template in the editor.
             </div>
 
             <div class="footer">
-                
+                <span id="todo-count">
+                    <i><strong>2</strong></i>
+                    items left
+                </span>
+                <button id="clear-completed-item">clear completed</button>
             </div>
 
         </div>
