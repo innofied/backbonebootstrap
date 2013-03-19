@@ -102,10 +102,9 @@ button{
 }
 .content{}
 .footer{
-    height: 40px;
-    border-top: 1px solid rgb(214, 203, 203);
-    position: fixed;
-    bottom: 0px;
+    height: 30px;
+    background: rgba(102, 80, 80, 0.63);
+    padding: 10px;
 }
 
 /****************************End of Layout rule**************************************/
@@ -165,7 +164,7 @@ button{
     position: absolute;
     left: 50px;
     width: 1px;
-    height: 92%;
+    height: 74%;
     top: 17px;
 }
 .content .todo-list li{
@@ -212,8 +211,12 @@ button{
     -o-transition: color 0.4s;
     transition: color 0.4s;
     font-size: 24px;
-    color: rgb(131, 131, 131);
+    color: rgb(107, 107, 107);
 }
+/*.content .todo-list li.completed label{   add the completed class when the item is selected
+    text-decoration: line-through;
+    color: #a9a9a9;
+}*/
 .content .todo-list li .destroy{
     position: absolute;
     top: 0;
@@ -239,6 +242,26 @@ button{
 }
 .content .todo-list li .edit{
     display: none;
+}
+.footer #todo-count{
+    float: left;
+    text-align: left;
+    color: #eee;
+    padding: 6px 0 0 15px;
+}
+.footer #clear-completed-item{
+    float: right;
+    position: relative;
+    line-height: 20px;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.1);
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 3px;
+    box-shadow: -1px -1px 0px 0px rgba(0, 0, 0, 0.2);
+    color: #eee;
+    margin-top: 3px;
+    margin-right: 16px;
 }
 
 
