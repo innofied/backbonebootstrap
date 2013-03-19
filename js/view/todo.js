@@ -10,7 +10,7 @@ define([
         var TodoView = Backbone.View.extend({
 
             //... is a list tag.
-            tagName:  "li",
+            tagName:  "ul",
             events: {
                 "click .toggle": "toggleDone"
             },
@@ -23,10 +23,16 @@ define([
                 this.listenTo(this.model, 'destroy', this.remove);
             },
             
+           append : function(item){
+              $('#todo-list').append("<li><div class='view'></div><input class='toggle' type='checkbox'><label>"+item.get('content')+"</label><button class='destroy'></button></li>");  
+           },
+
+            // Toggle the `"done"` state of the model.
             toggleDone: function() {
                 console.log("clicked")
                 this.model.toggle();
             }
         });
+        return TodoView;
     });
 

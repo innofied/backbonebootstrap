@@ -17,7 +17,8 @@ requirejs.config({
         backbone : '../lib/backbone',
         app : 'view/app',
         todomodel: 'model/todo',
-        todocollection : 'collection/todo'
+        todocollection : 'collection/todo',
+        todoview : 'view/todo'
     },
     shim : {
         jquery : {
@@ -39,6 +40,10 @@ requirejs.config({
         app : {
             deps : ['jquery','underscore','backbone'],
             exports : 'app'
+        },
+        todoview : {
+            deps : ['jquery','underscore','backbone'],
+            exports : 'todoview'
         },
          todomodel : {
             deps : ['jquery','underscore','backbone'],

@@ -213,9 +213,9 @@ button{
     font-size: 24px;
     color: rgb(107, 107, 107);
 }
-/*.content .todo-list li.completed label{   /*add the completed class when the item is selected*/
-    color: #a9a9a9;
+/*.content .todo-list li.completed label{   add the completed class when the item is selected
     text-decoration: line-through;
+    color: #a9a9a9;
 }*/
 .content .todo-list li .destroy{
     position: absolute;
